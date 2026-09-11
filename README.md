@@ -1,4 +1,4 @@
-# PWNUAV — a vulnerable-by-design MAVLink drone lab
+# PWNUAV: a vulnerable-by-design MAVLink drone lab
 
 PWNUAV is a red-team lab and toolkit for **MAVLink-based drones (UAVs)**. It pairs a
 vulnerable-by-design drone emulator with five over-the-air attack PoCs, all validated on
@@ -25,14 +25,14 @@ The methodology does not change.
 4. Air-gap crossing via SDR
 5. Impact assessment
 
-Each phase maps onto stages of the **PWNUAV Matrix** — see
+Each phase maps onto stages of the **PWNUAV Matrix** see
 [`pwnuav/docs/TAXONOMY.md`](pwnuav/docs/TAXONOMY.md). For satellites there is SPARTA (The
 Aerospace Corporation); for drones there is no consolidated equivalent, and closing that
 gap is part of the point of this project.
 
 ## Repository layout
 
-Two content folders — the **tool** and the **scripts** — plus the test suite.
+Two content folders: the **tool** and the **scripts**, plus the test suite.
 
 ```
 PWNUAV/
@@ -61,7 +61,7 @@ PWNUAV/
 
 ## Install
 
-Software lab (no radios required — pure software modem + drone stub/SITL):
+Software lab (no radios required pure software modem + drone stub/SITL):
 
 ```bash
 git clone https://github.com/r0r0x-xx/PWNUAV.git
@@ -73,12 +73,12 @@ pytest                     # run the test suite
 
 The over-the-air PoCs additionally need SoapySDR with device modules (SoapyHackRF /
 SoapyPlutoSDR / SoapyRTLSDR), which are not pip packages. Install the system SDR stack and
-create a separate radio venv — see
+create a separate radio venv:
 [`pwnuav/emulator/rf-bridge/SETUP-HARDWARE.md`](pwnuav/emulator/rf-bridge/SETUP-HARDWARE.md).
 
 ## Quick start (software, no hardware)
 
-Interactive two-terminal demo — terminal 1 hosts the drone, terminal 2 runs an attack:
+Interactive two-terminal demo terminal 1 hosts the drone, terminal 2 runs an attack:
 
 ```bash
 # terminal 1 — the drone (MAVLink hub + vulnerable stub, live ASCII console)
@@ -147,11 +147,11 @@ gaps concrete and gives defenders and researchers something to practice against.
 
 ## Documentation
 
-- [`pwnuav/docs/DESIGN.md`](pwnuav/docs/DESIGN.md) — architecture, RF/PoC design, honest
+- [`pwnuav/docs/DESIGN.md`](pwnuav/docs/DESIGN.md): architecture, RF/PoC design, honest
   link-reliability analysis.
-- [`pwnuav/docs/TAXONOMY.md`](pwnuav/docs/TAXONOMY.md) — the PWNUAV Matrix (7 stages, TTPs).
-- [`attacks/README.md`](attacks/README.md) — the PoCs, radio configuration, how to run.
+- [`pwnuav/docs/TAXONOMY.md`](pwnuav/docs/TAXONOMY.md): the PWNUAV Matrix (7 stages, TTPs).
+- [`attacks/README.md`](attacks/README.md): the PoCs, radio configuration, how to run.
 
 ## License
 
-MIT — see [`LICENSE`](LICENSE).
+MIT: see [`LICENSE`](LICENSE).
