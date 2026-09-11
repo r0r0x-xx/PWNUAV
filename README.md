@@ -2,7 +2,7 @@
 
 PWNUAV is a red-team lab and toolkit for **MAVLink-based drones (UAVs)**. It pairs a
 vulnerable-by-design drone emulator with five over-the-air attack PoCs, all validated on
-real SDR hardware, and it proposes a **TTP taxonomy for drones** — the PWNUAV Matrix.
+real SDR hardware, and it proposes a **TTP taxonomy for drones** the PWNUAV Matrix.
 
 It is the drone counterpart to **PWNSAT** (a vulnerable FlatSat) and **PWNCube** (a
 vulnerable CubeSat). The thesis is simple: **the same offensive red-team methodology
