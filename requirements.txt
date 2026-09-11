@@ -1,0 +1,11 @@
+# Core runtime (software lab: SITL/stub + software modem, no radios required)
+pymavlink>=2.4.40
+numpy>=1.24
+
+# Dev / tests
+pytest>=8.0
+
+# Over-the-air PoCs additionally need SoapySDR with device modules
+# (SoapyHackRF / SoapyPlutoSDR / SoapyRTLSDR). SoapySDR is not a pip package;
+# install it with the system SDR stack (radioconda / Homebrew). See
+# pwnuav/emulator/rf-bridge/SETUP-HARDWARE.md.

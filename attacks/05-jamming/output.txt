@@ -1,0 +1,15 @@
+========== PWNUAV JAMMING / DoS — 915 MHz link ==========
+[*] Victim : Pluto TX MAVLink @ 915 MHz   Monitor : RTL-SDR RX
+
+[BASELINE] no jammer, 1.5s
+   frames decoded :  449   rate ~ 299.3/s   packet loss 0%
+
+[*] Jammer: HackRF, band-limited AWGN +/-120 kHz, TX gain 47 (max)
+    (all jammer power concentrated in the ~150 kHz occupied by the GFSK)
+
+[JAMMED] jammer ON, 1.5s
+   frames decoded :   42   rate ~  28.0/s   packet loss 90.6%
+
+[IM-01] Link denied: 449 -> 42 heartbeats (90.6% loss).
+[IM-02] Sustained loss exceeds the GCS failsafe timeout -> RTL / LAND.
+[+] PoC 05 jamming OVER-THE-AIR: OK

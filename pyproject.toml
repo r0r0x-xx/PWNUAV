@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pwnuav"
+version = "0.1.0"
+description = "PWNUAV - a vulnerable-by-design MAVLink drone lab and offensive toolkit"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Romel Marin (r0r0x)" }]
+keywords = ["mavlink", "drone", "uav", "sdr", "red-team", "gnss-spoofing", "gfsk"]
+dependencies = ["pymavlink>=2.4.40", "numpy>=1.24"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+# Extras used only for the over-the-air PoCs (installed in a separate SDR venv).
+radio = ["numpy>=1.24"]
+
+[project.urls]
+Homepage = "https://github.com/r0r0x-xx/PWNUAV"
+
+[project.scripts]
+pwnuav-recon = "pwnuav.recon:main"
+pwnuav-eavesdrop = "pwnuav.eavesdrop:main"
+pwnuav-inject = "pwnuav.inject:main"
+pwnuav-gps-spoof = "pwnuav.gps_spoof:main"
+
+[tool.setuptools]
+packages = ["pwnuav", "pwnuav.rf"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

