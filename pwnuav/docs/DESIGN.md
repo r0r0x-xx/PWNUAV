@@ -1,10 +1,10 @@
 # PWNUAV — Technical design
 
-Talk: "Orbital Red Teaming" · Author: Romel Marin (r0r0x)
+Author: Romel Marin (r0r0x)
 
 ## Goal
 A vulnerable-by-design MAVLink drone emulator with 5 attack PoCs that mirror the
-5-phase red-team methodology of the talk and validate the PWNUAV Matrix taxonomy.
+5-phase red-team methodology and validate the PWNUAV Matrix taxonomy.
 
 ## Design decisions
 - **Autopilot:** ArduPilot (SITL).
@@ -100,7 +100,7 @@ The v1 receiver (`pwnuav/rf/receiver.py`) is NOT perfect and the link has NO FEC
 1. **HackRF half-duplex vs command injection.** The HackRF cannot TX telemetry and RX
    commands at the same time. Mitigation: in PoC 03 the drone operates in an RX window, or
    the rf-bridge time-multiplexes TX/RX; alternatively the command link is handled by the
-   full-duplex Pluto and the HackRF only does the downlink. To be validated in implementation.
+   full-duplex Pluto and the HackRF only does the downlink.
 2. **GPS spoofing against pure SITL.** SITL simulates its GPS internally; it does not read
    RF. **Decision:** use GPS_INPUT injection over MAVLink (`pwnuav/gps_spoof.py`) so the
    stack adopts a fake position -> observable jump in GLOBAL_POSITION_INT / failsafe (NV-01).

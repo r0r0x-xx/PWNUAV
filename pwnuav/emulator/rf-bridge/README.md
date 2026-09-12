@@ -28,7 +28,7 @@ Requires SoapySDR + SoapyHackRF + SoapyPlutoSDR.
 python pwnuav/emulator/rf-bridge/rf_loopback.py
 ```
 
-**Note:** This script is an integration scaffold, not a functional test. The `decode` receiver currently assumes frame-aligned IQ (software loopback). Over real radios you need preamble-correlation timing recovery, CFO/DC removal and TX/RX robustness — that is Plan 3.
+**Note:** This script is an integration scaffold, not a functional test. The `decode` receiver currently assumes frame-aligned IQ (software loopback). Over real radios you need preamble-correlation timing recovery, CFO/DC removal and TX/RX robustness.
 
 ⚠️ Transmit ONLY inside the cage or over a cable with attenuators. Never over-the-air.
 
@@ -37,7 +37,7 @@ PoCs 01-03 currently talk over UDP against the stub/SITL. Over RF, the same
 MAVLink flow is serialized with pymavlink, passed through `modem.encode` to the
 drone's TX (HackRF), and the attacker (Pluto) captures it, runs `modem.decode`
 and `mav.decode`. Full PoC-over-RF integration and PoCs 04-05 (GPS spoofing,
-jamming) land in Plan 3.
+jamming) are the next step over real radios.
 
 ## Known limitation (v1)
 A single frame carries up to 255 bytes of payload. The largest unsigned MAVLink v2 frame is ~265 bytes (10 header + 253 payload + 2 CRC), which exceeds this 255-byte cap; however, the PoC messages (heartbeat, sys_status, global_position_int, attitude, command_long) are well below it. Fragmentation (as SiK does) is left for a later version.

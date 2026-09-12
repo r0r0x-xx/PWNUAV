@@ -4,8 +4,8 @@ encode() wraps a payload in a frame and modulates it; decode() demodulates an
 IQ stream and returns every valid frame's payload. Loopback-testable end to
 end with no hardware.
 
-NOTE: decode() assumes frame-aligned IQ (software loopback). Real-radio timing
-recovery is deferred to Plan 3.
+NOTE: decode() assumes frame-aligned IQ (software loopback). Recovering frames
+off a real radio additionally needs preamble-correlation timing recovery.
 """
 from __future__ import annotations
 

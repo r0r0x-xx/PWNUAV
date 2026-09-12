@@ -12,10 +12,10 @@ the 915 MHz link; GPS spoofing (PoC 04) is virtual (see its runbook).
 - 01 Recon:        `python pwnuav/emulator/rf-bridge/attacker_rf.py recon`      (RC/PA)
 - 02 Eavesdrop:    `python pwnuav/emulator/rf-bridge/attacker_rf.py eavesdrop`  (IA-01/IM-04)
 - 03 Injection:    `python pwnuav/emulator/rf-bridge/attacker_rf.py inject`     (C2/EX)
-- 04 GPS spoofing: VIRTUAL (not over the air) -> `pwnuav/gps_spoof.py --connect udpin:127.0.0.1:14550` (see attacks/04-gps-spoof/GUION.md) (NV-01/IM-03)
+- 04 GPS spoofing: VIRTUAL (not over the air) -> `pwnuav/gps_spoof.py --connect udpin:127.0.0.1:14550` (NV-01/IM-03)
 - 05 Jamming:      `python attacks/05-jamming/jam.py`                       (IM-01/IM-02)
 
-The MAVLink logic is the same as in Plan 1; only the transport changes to RF via
+The MAVLink logic is the same as over UDP; only the transport changes to RF via
 `pwnuav.rf.transport` (validated in software by `tests/test_rf_transport.py`).
 
 ## Safety

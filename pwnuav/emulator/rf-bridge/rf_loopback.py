@@ -3,7 +3,7 @@
 recover it on the Pluto — integration scaffold for the GFSK bridge over real radios.
 
 This script will NOT recover a frame as-is: the GFSK receiver has no preamble-based
-timing recovery yet (Plan 3). It is scaffolding for the real-radio bring-up.
+timing recovery yet. It is scaffolding for the real-radio bring-up.
 
 RUN ONLY inside a Faraday cage or cabled with attenuators. Requires SoapySDR
 with SoapyHackRF and SoapyPlutoSDR.

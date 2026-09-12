@@ -6,8 +6,8 @@ integrate-and-dump. Simplified relative to a real SiK radio (no FHSS, no FEC,
 no closed-loop timing recovery) — enough to carry MAVLink over an IQ stream
 and to demonstrate demodulation (PWNUAV PA-01).
 
-NOTE: demodulate() assumes frame-aligned IQ (software loopback). Real-radio timing
-recovery via preamble correlation and CFO/DC removal is deferred to Plan 3.
+NOTE: demodulate() assumes frame-aligned IQ (software loopback). Recovering frames
+off a real radio additionally needs preamble-correlation timing recovery and CFO/DC removal.
 """
 from __future__ import annotations
 

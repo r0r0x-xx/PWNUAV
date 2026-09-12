@@ -2,9 +2,9 @@
 
 > **Why it exists.** For satellites there is **SPARTA** (The Aerospace Corporation):
 > a consolidated matrix of offensive tactics and techniques. For drones there is **no
-> consolidated equivalent**. That gap is part of the argument of the talk, and the PWNUAV
+> consolidated equivalent**. That gap is part of the argument for this project, and the PWNUAV
 > Matrix is the proposal to fill it: 7 stages (tactics) with their own TTPs, mapped
-> one-to-one onto the 5-phase red-team methodology used throughout the talk.
+> one-to-one onto the 5-phase red-team methodology.
 
 ## Relationship to the 5-phase methodology
 

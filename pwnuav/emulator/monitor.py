@@ -2,7 +2,7 @@
 """PWNUAV emulator console: quad ASCII art, status, mini-map and (optional) live TUI.
 
 Usage:
-  python pwnuav/emulator/monitor.py                 # static snapshot (for slide capture)
+  python pwnuav/emulator/monitor.py                 # static snapshot
   python pwnuav/emulator/monitor.py --live          # live TUI dashboard (Ctrl-C to exit)
   python pwnuav/emulator/monitor.py --live --spoof  # live + injects a GPS spoof; watch the drone jump
   python pwnuav/emulator/monitor.py --live --seconds 8   # bounded live run (to record/test)
